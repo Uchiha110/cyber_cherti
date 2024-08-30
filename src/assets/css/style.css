@@ -1,0 +1,947 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("../../../public/fonts/MontserratRegular/Montserrat-Regular.eot");
+  src: url("../../../public/fonts/MontserratRegular/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("../../../public/fonts/MontserratRegular/Montserrat-Regular.woff2") format("woff2"), url("../../../public/fonts/MontserratRegular/Montserrat-Regular.woff") format("woff"), url("../../../public/fonts/MontserratRegular/Montserrat-Regular.ttf") format("truetype"), url("../../../public/fonts/MontserratRegular/Montserrat-Regular.svg#Montserrat-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.main-div-home {
+  background: rgb(0, 4, 97);
+  background: linear-gradient(50deg, rgb(0, 4, 97) 0%, rgb(14, 81, 203) 49%, rgb(12, 51, 65) 100%);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-div-server {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-div-404 {
+  background: rgb(0, 0, 0);
+  background: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), color-stop(50%, rgb(145, 145, 145)), to(rgb(0, 0, 0)));
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(145, 145, 145) 50%, rgb(0, 0, 0) 100%);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  padding: 1% 12%;
+}
+.header .container-white {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.header .container-white .header-label-white {
+  color: #000000;
+}
+.header .container-black {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.header .container-black .header-label-black {
+  color: #f5f5f5;
+}
+.header .header-back-button-white {
+  color: #000000;
+  background: none;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid #57965C;
+  position: absolute;
+  right: 1%;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.header .header-back-button-white:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.header .header-back-button-white:hover {
+  color: #f5f5f5;
+  background: #57965C;
+}
+.header .header-back-button-black {
+  color: #f5f5f5;
+  background: none;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid #57965C;
+  position: absolute;
+  right: 1%;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.header .header-back-button-black:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.header .header-back-button-black:hover {
+  color: #f5f5f5;
+  background: #57965C;
+}
+
+.servers-search-white {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12% 1% 12%;
+  color: #000000;
+}
+.servers-search-white .container-label-white {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: inline-block;
+  margin-right: 2%;
+  width: 12%;
+}
+.servers-search-white .container-input-white {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  width: 88%;
+}
+
+.servers-search-black {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12% 1% 12%;
+  color: #f5f5f5;
+}
+.servers-search-black .container-label-black {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: inline-block;
+  margin-right: 2%;
+}
+.servers-search-black .container-input-black {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 2%; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  width: 100%;
+}
+
+.input {
+  font-size: 2vh;
+  text-align: center;
+  padding: 1% 0 1% 0;
+  border: 2px solid #333333;
+  border-radius: 5px;
+  background: none;
+  outline: none;
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  width: 100%;
+  color: #f5f5f5;
+}
+
+.white-color-text {
+  color: #000000;
+}
+
+.black-color-text {
+  color: #f5f5f5;
+}
+
+.white-color-border {
+  border: 1px solid #000000;
+}
+
+.black-color-border {
+  border: 1px solid #f5f5f5;
+}
+
+.search {
+  width: 38px;
+  height: 38px;
+}
+
+.servers {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  padding: 0 12%;
+}
+.servers .container-server-list {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nothing-block-search {
+  font-size: 1vh;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  text-align: center;
+}
+
+.game-card {
+  font-size: 0.6vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  color: #f5f5f5;
+  margin: 2.5%;
+  padding: 2.5% 2.5%;
+  width: 90%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.game-card:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.game-card .game-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.game-card .game-card-container div {
+  width: auto;
+  height: 100%;
+  border-radius: 5px;
+}
+.game-card .game-card-container div img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 4% auto;
+}
+.game-card .game-card-container h1 {
+  width: 100%;
+}
+.game-card img {
+  border-radius: 5px;
+  width: 100%; /* Фиксированная ширина для изображений */
+  height: 100px; /* Фиксированная высота для изображений */
+}
+.game-card h1 {
+  margin: 3% 1% 1% 1%;
+}
+
+.game-image-bar {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  padding: 0 12% 1% 12%;
+}
+.game-image-bar .container {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+.game-image-bar .container img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 1% auto;
+}
+
+.game-server-list {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  padding: 0 12% 1% 12%;
+}
+
+.server-table {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+  grid-template-columns: repeat(7, 1fr);
+}
+.server-table .container {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  margin: 2%;
+  color: #f5f5f5;
+  font-size: 0.8vh;
+  text-align: center;
+}
+.server-table .container-false-info-server {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  margin: 2%;
+  color: #f5f5f5;
+  font-size: 0.8vh;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.server-table .container-false-info-server:hover {
+  -webkit-transform: scale(0.94);
+          transform: scale(0.94);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.server-table .container-true-info-server {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  margin: 2%;
+  color: #f5f5f5;
+  font-size: 0.8vh;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.server-table .container-true-info-server:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  color: #000000;
+}
+.server-table .container-true-info-server:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid #57965C;
+  background: #57965C;
+  color: #f5f5f5;
+}
+
+.rotate-phone-screen {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  display: none;
+  color: #f5f5f5;
+  padding: 0 1% 0 1%;
+}
+.rotate-phone-screen .container {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  padding: 10px;
+  text-align: center;
+}
+
+.main-info-page-404 {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  padding: 1% 12%;
+}
+.main-info-page-404 .container-white {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  position: relative;
+  padding-bottom: 4%;
+}
+.main-info-page-404 .container-white h1 {
+  font-size: 8vw;
+  text-align: center;
+}
+.main-info-page-404 .container-white p {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.footer {
+  font-size: 1vw;
+  font-family: "MontserratRegular";
+  font-weight: normal;
+  font-style: normal;
+  margin-top: auto;
+  padding: 1% 12% 1% 12%;
+}
+.footer .container-white {
+  background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+.footer .container-white img {
+  padding-top: 1%;
+  width: 20%;
+  cursor: pointer;
+}
+.footer .container-black {
+  background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+  border-radius: 10px; /* Скругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+.footer .container-black img {
+  padding-top: 1%;
+  width: 20%;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.highlight {
+  background: yellow;
+}
+
+@media screen and (max-width: 2560px) {
+  .header {
+    padding: 1% 12%;
+    font-size: 1vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 12px;
+    border: 3px solid #57965C;
+    right: 2.5%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 12px;
+    border: 3px solid #57965C;
+    right: 2.5%;
+  }
+}
+@media screen and (max-width: 1920px) {
+  .header {
+    padding: 1% 12%;
+    font-size: 1vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 8px;
+    border: 2px solid #57965C;
+    right: 2%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 8px;
+    border: 2px solid #57965C;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .header {
+    padding: 1% 12%;
+    font-size: 1vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 6px;
+    border: 2px solid #57965C;
+    right: 2%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 6px;
+    border: 2px solid #57965C;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 1% 12%;
+    font-size: 1vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 6px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 6px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 1% 12%;
+    font-size: 1vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 4px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 4px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    padding: 1% 1%;
+    font-size: 2vw;
+  }
+  .header .container-white a .header-back-button-white {
+    padding: 4px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+  .header .container-black a .header-back-button-black {
+    padding: 4px;
+    border: 1px solid #57965C;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 1920px) {
+  .game-image-bar {
+    padding: 0 12% 1% 12%;
+  }
+  .game-image-bar .container {
+    padding: 20px;
+  }
+  .game-image-bar .container img {
+    width: 50px;
+    height: 50px;
+    margin: 0.5% auto;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .game-image-bar {
+    padding: 0 12% 1% 12%;
+  }
+  .game-image-bar .container {
+    padding: 15px;
+  }
+  .game-image-bar .container img {
+    width: 40px;
+    height: 40px;
+    margin: 0.5% auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .game-image-bar {
+    padding: 0 12% 1% 12%;
+  }
+  .game-image-bar .container {
+    padding: 10px;
+  }
+  .game-image-bar .container img {
+    width: 30px;
+    height: 30px;
+    margin: 0.5% auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .game-image-bar {
+    padding: 0 12% 1% 12%;
+  }
+  .game-image-bar .container {
+    padding: 5px;
+  }
+  .game-image-bar .container img {
+    width: 25px;
+    height: 25px;
+    margin: 0.5% auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .game-image-bar {
+    padding: 0 1% 1% 1%;
+  }
+  .game-image-bar .container {
+    padding: 5px;
+  }
+  .game-image-bar .container img {
+    width: 25px;
+    height: 25px;
+    margin: 0.5% auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .servers-search-white {
+    padding: 0 1% 1% 1%;
+  }
+  .servers-search-white .container-label-white h1 {
+    font-size: 2.8vw;
+  }
+  .servers-search-white .container-input-white input {
+    font-size: 2vw;
+  }
+  .servers-search-black {
+    padding: 0 1% 1% 1%;
+  }
+  .servers-search-black .container-label-black h1 {
+    font-size: 2.8vw;
+  }
+  .servers-search-black .container-input-black {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .game-card .game-card-container div img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .servers {
+    padding: 0 12%;
+  }
+  .servers .container-server-list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+  }
+  .game-card .game-card-container div img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .servers {
+    padding: 0 12%;
+  }
+  .servers .container-server-list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
+  .game-card .game-card-container div img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .servers {
+    padding: 0 12%;
+  }
+  .servers .container-server-list {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+  .game-card {
+    margin: 1% 0 1% 0;
+    width: 94.6%;
+  }
+  .game-card .game-card-container h1 {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 425px) {
+  .servers {
+    padding: 0 1%;
+  }
+  .servers .container-server-list {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+  .game-card {
+    margin: 1% 0 1% 0;
+    width: 94.6%;
+  }
+  .game-card .game-card-container h1 {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (max-width: 2560px) {
+  .game-server-list {
+    padding: 0 12% 0 12%;
+  }
+  .game-server-list .server-table .container {
+    padding: 20px;
+    font-size: 0.4vw;
+  }
+  .game-server-list .server-table .container-true-info-server {
+    padding: 20px;
+    font-size: 0.4vw;
+  }
+  .game-server-list .server-table .container-false-info-server {
+    padding: 20px;
+    font-size: 0.4vw;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .game-server-list {
+    padding: 0 12% 0 12%;
+  }
+  .game-server-list .server-table .container {
+    padding: 15px;
+    font-size: 0.38vw;
+  }
+  .game-server-list .server-table .container-true-info-server {
+    padding: 15px;
+    font-size: 0.38vw;
+  }
+  .game-server-list .server-table .container-false-info-server {
+    padding: 15px;
+    font-size: 0.38vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .game-server-list {
+    padding: 0 12% 0 12%;
+  }
+  .game-server-list .server-table .container {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.4vw;
+  }
+  .game-server-list .server-table .container-true-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.4vw;
+  }
+  .game-server-list .server-table .container-false-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.4vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .game-server-list {
+    padding: 0 12% 0 12%;
+  }
+  .game-server-list .server-table .container {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.39vw;
+  }
+  .game-server-list .server-table .container-true-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.39vw;
+  }
+  .game-server-list .server-table .container-false-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.39vw;
+  }
+}
+@media screen and (max-width: 425px) {
+  .game-server-list {
+    padding: 0 1% 1% 1%;
+  }
+  .game-server-list .server-table .container {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.5vw;
+  }
+  .game-server-list .server-table .container-true-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.5vw;
+  }
+  .game-server-list .server-table .container-false-info-server {
+    padding: 10px 0px 10px 0px;
+    font-size: 0.5vw;
+  }
+  .rotate-phone-screen {
+    display: block;
+    padding: 0 1% 0 1%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 1% 12% 1% 12%;
+  }
+  .footer .container-white {
+    padding: 15px;
+  }
+  .footer .container-black {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer {
+    padding: 1%;
+  }
+  .footer .container-white {
+    padding: 10px;
+  }
+  .footer .container-black {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main-info-page-404 {
+    padding: 0 1% 0 1%;
+  }
+  .main-info-page-404 .container-white h1 {
+    font-size: 10vw;
+  }
+  .main-info-page-404 .container-white p {
+    font-size: 4vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */

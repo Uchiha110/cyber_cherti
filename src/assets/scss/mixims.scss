@@ -1,0 +1,420 @@
+@mixin fontStyle($fontSize: 1vw) {
+    font-size: #{$fontSize};
+    font-family: 'MontserratRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin acrylic-white($padding: 20px) {
+    background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(10px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+    border-radius: 10px; /* Скругленные углы */
+    padding: $padding; /* Внутренние отступы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+@mixin acrylic-black($padding: 20px) {
+    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(10px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная граница */
+    border-radius: 10px; /* Скругленные углы */
+    padding: $padding; /* Внутренние отступы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+@mixin input {
+    font-size: 2vh;
+    text-align: center;
+    padding: 1% 0 1% 0;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+}
+
+@mixin animation-zoom-in($scale: 1.01) {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(#{$scale});
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@mixin animation-zoom-in-table-true($scale: 1.00) {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(#{$scale});
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон */
+        backdrop-filter: blur(10px); /* Размытие фона */
+        -webkit-backdrop-filter: blur(10px); /* Размытие фона для WebKit-браузеров */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная граница */
+        border-radius: 10px; /* Скругленные углы */
+        padding: 20px; /* Внутренние отступы */
+        color: #000000;
+    }
+
+    &:active {
+        transition: all 0.1s ease-in-out;
+        border: 1px solid #57965C;
+        background: #57965C;
+        color: #f5f5f5;
+    }
+}
+
+@mixin server-table-block {
+    margin: 2%;
+    color: #f5f5f5;
+    font-size: 0.8vh;
+    text-align: center;
+}
+
+@mixin server-search-style($color_) {
+    @if $color_ == "white" {
+        .servers-search {
+            @include fontStyle;
+            display: flex;
+            padding: 0 12% 1% 12%;
+            color: #000000;
+
+            .container-label {
+                @include acrylic-white;
+                display: inline-block;
+                margin-right: 2%;
+            }
+
+            .container-input {
+                @include acrylic-white;
+                margin-right: 2%;
+                width: 100%;
+            }
+
+            .container-button {
+                @include acrylic-white;
+                @include animation-zoom-in(1.04);
+                cursor: pointer;
+            }
+        }
+    } @else if $color_ == "black" {
+        .servers-search {
+            @include fontStyle;
+            display: flex;
+            padding: 0 12% 1% 12%;
+            color: #f5f5f5;
+
+            .container-label {
+                @include acrylic-black;
+                display: inline-block;
+                margin-right: 2%;
+            }
+
+            .container-input {
+                @include acrylic-black;
+                margin-right: 2%;
+                width: 100%;
+            }
+
+            .container-button {
+                @include acrylic-black;
+                @include animation-zoom-in(1.04);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@mixin header_conf($padding1: 1% 12%, $font-size: 1vw, $padding2: 8px, $border: 2px, $right: 1%) {
+    .header {
+        padding: $padding1;
+        font-size: $font-size;
+
+        .container-white {
+            a {
+                .header-back-button-white {
+                    padding: $padding2;
+                    border: $border solid #57965C;
+                    right: $right;
+                }
+            }
+        }
+
+        .container-black {
+            a {
+                .header-back-button-black {
+                    padding: $padding2;
+                    border: $border solid #57965C;
+                    right: $right;
+                }
+            }
+        }
+    }
+}
+
+@mixin game_image_bar_conf($width, $height, $margin, $padding1, $padding2: 0 12% 1% 12%) {
+    .game-image-bar {
+        padding: $padding2;
+
+        .container {
+            padding: $padding1;
+
+            img {
+                width: $width;
+                height: $height;
+                margin: $margin;
+            }
+        }
+    }
+}
+
+@mixin servers_search_conf($padding, $font-size-h1, $font-size-input) {
+    .servers-search-white {
+        padding: $padding;
+
+        .container-label-white {
+            h1 {
+                font-size: $font-size-h1;
+            }
+        }
+
+        .container-input-white {
+            input {
+                font-size: $font-size-input;
+            }
+        }
+    }
+
+    .servers-search-black {
+        padding: $padding;
+
+        .container-label-black {
+            h1 {
+                font-size: $font-size-h1;
+            }
+        }
+
+        .container-input-black {
+            font-size: $font-size-input;
+        }
+    }
+}
+
+@mixin grid_table($padding1, $grid, $padding2) {
+    .servers {
+        padding: $padding1;
+
+        .container-server-list {
+            grid-template-columns: repeat($grid, 1fr);
+            padding: $padding2;
+        }
+    }
+}
+
+@mixin game_card_conf($margin, $font-size) {
+    .game-card {
+        margin: $margin;
+        width: 94.6%;
+
+        .game-card-container {
+            h1 {
+                font-size: $font-size;
+            }
+        }
+    }
+}
+
+@mixin ico_game_card($width, $height) {
+    .game-card {
+        .game-card-container {
+            div {
+                img {
+                    width: $width;
+                    height: $height;
+                }
+            }
+        }
+    }
+}
+
+@mixin size_server_table($padding1: 0 12% 0 12%, $padding2: 20px, $font-size: 0.4vw) {
+    .game-server-list {
+        padding: $padding1;
+
+        .server-table {
+            .container {
+                padding: $padding2;
+                font-size: $font-size;
+            }
+
+            .container-true-info-server {
+                padding: $padding2;
+                font-size: $font-size;
+            }
+
+            .container-false-info-server {
+                padding: $padding2;
+                font-size: $font-size;
+            }
+        }
+    }
+}
+
+@mixin rotate_phone_screen($display) {
+    .rotate-phone-screen {
+        display: $display;
+        padding: 0 1% 0 1%;
+    }
+}
+
+@mixin footer_conf($padding1, $padding2) {
+    .footer {
+        padding: $padding1;
+
+        .container-white {
+            padding: $padding2;
+        }
+
+        .container-black {
+            padding: $padding2;
+        }
+    }
+}
+
+@mixin page_404_conf($padding, $font-size-h1, $font-size-p) {
+    .main-info-page-404 {
+        padding: $padding;
+
+        .container-white {
+            h1 {
+                font-size: $font-size-h1;
+            }
+
+            p {
+                font-size: $font-size-p;
+            }
+        }
+    }
+}
+
+@mixin header {
+    @media screen and (max-width: 2560px) {
+        @include header_conf($padding2: 12px, $border: 3px, $right: 2.5%)
+    }
+
+    @media screen and (max-width: 1920px) {
+        @include header_conf($padding2: 8px, $border: 2px, $right: 2%)
+    }
+
+    @media screen and (max-width: 1440px) {
+        @include header_conf($padding2: 6px, $border: 2px, $right: 2%)
+    }
+
+    @media screen and (max-width: 1024px) {
+        @include header_conf($padding2: 6px, $border: 1px, $right: 2%)
+    }
+
+    @media screen and (max-width: 768px) {
+        @include header_conf($padding2: 4px, $border: 1px, $right: 2%)
+    }
+
+    @media screen and (max-width: 425px) {
+        @include header_conf($padding1: 1% 1%, $font-size: 2vw, $padding2: 4px, $border: 1px, $right: 2%)
+    }
+}
+
+@mixin game_image_bar {
+    @media screen and (max-width: 1920px) {
+        @include game_image_bar_conf($width: 50px, $height: 50px, $margin: 0.5% auto, $padding1: 20px);
+    }
+
+    @media screen and (max-width: 1440px) {
+        @include game_image_bar_conf($width: 40px, $height: 40px, $margin: 0.5% auto, $padding1: 15px);
+    }
+
+    @media screen and (max-width: 1024px) {
+        @include game_image_bar_conf($width: 30px, $height: 30px, $margin: 0.5% auto, $padding1: 10px);
+    }
+
+    @media screen and (max-width: 768px) {
+        @include game_image_bar_conf($width: 25px, $height: 25px, $margin: 0.5% auto, $padding1: 5px);
+    }
+
+    @media screen and (max-width: 425px) {
+        @include game_image_bar_conf($width: 25px, $height: 25px, $margin: 0.5% auto, $padding1: 5px, $padding2: 0 1% 1% 1%);
+    }
+}
+
+@mixin servers_search {
+    @media screen and (max-width: 425px) {
+        @include servers_search_conf($padding: 0 1% 1% 1%, $font-size-h1: 2.8vw, $font-size-input: 2vw)
+    }
+}
+
+@mixin home_table_media {
+    @media screen and (min-width: 2560px) {
+        @include ico_game_card($width: 80px, $height: 80px);
+    }
+
+    @media screen and (max-width: 1440px) {
+        @include grid_table($padding1: 0 12%,$grid: 2, $padding2: 15px);
+        @include ico_game_card($width: 40px, $height: 40px);
+    }
+
+    @media screen and (max-width: 1024px) {
+        @include grid_table($padding1: 0 12%, $grid: 2, $padding2: 10px);
+        @include ico_game_card($width: 30px, $height: 30px);
+    }
+
+    @media screen and (max-width: 768px) {
+        @include grid_table($padding1: 0 12%, $grid: 1, $padding2: 10px);
+        @include game_card_conf($margin: 1% 0 1% 0, $font-size: 2vw);
+    }
+
+    @media screen and (max-width: 425px) {
+        @include grid_table($padding1: 0 1%, $grid: 1, $padding2: 10px);
+        @include game_card_conf($margin: 1% 0 1% 0, $font-size: 2.5vw);
+    }
+}
+
+@mixin game-server-list {
+    @media screen and (max-width: 2560px) {
+        @include size_server_table;
+    }
+
+    @media screen and (max-width: 1440px) {
+        @include size_server_table($padding2: 15px,$font-size: 0.38vw);
+    }
+
+    @media screen and (max-width: 1024px) {
+        @include size_server_table($padding2: 10px 0px 10px 0px, $font-size: 0.4vw);
+    }
+
+    @media screen and (max-width: 768px) {
+        @include size_server_table($padding2: 10px 0px 10px 0px, $font-size: 0.39vw);
+    }
+
+    @media screen and (max-width: 425px) {
+        @include size_server_table($padding1: 0 1% 1% 1%, $padding2: 10px 0px 10px 0px,$font-size: 0.5vw);
+        @include rotate_phone_screen($display: block)
+    }
+}
+
+@mixin footer {
+    @media screen and (max-width: 768px) {
+        @include footer_conf($padding1: 1% 12% 1% 12%,$padding2: 15px)
+    }
+
+    @media screen and (max-width: 425px) {
+        @include footer_conf($padding1: 1%,$padding2: 10px)
+    }
+}
+
+@mixin page-404 {
+    @media screen and (max-width: 425px) {
+        @include page_404_conf($padding: 0 1% 0 1%, $font-size-h1: 10vw, $font-size-p: 4vw)
+    }
+}

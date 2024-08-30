@@ -1,0 +1,364 @@
+@import "mixims";
+
+@font-face {
+    font-family: 'MontserratRegular';
+    src: url('../../../public/fonts/MontserratRegular/Montserrat-Regular.eot');
+    src: url('../../../public/fonts/MontserratRegular/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../../public/fonts/MontserratRegular/Montserrat-Regular.woff2') format('woff2'),
+        url('../../../public/fonts/MontserratRegular/Montserrat-Regular.woff') format('woff'),
+        url('../../../public/fonts/MontserratRegular/Montserrat-Regular.ttf') format('truetype'),
+        url('../../../public/fonts/MontserratRegular/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Медиа запросы
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease-out;
+}
+
+.main-div-home {
+    background: rgb(0,4,97);
+    background: linear-gradient(50deg, rgba(0,4,97,1) 0%, rgba(14,81,203,1) 49%, rgba(12,51,65,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-div-server {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-div-404 {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(145,145,145,1) 50%, rgba(0,0,0,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    @include fontStyle;
+    padding: 1% 12%;
+
+    .container-white {
+        @include acrylic-white(2%);
+        display: flex;
+        position: relative;
+
+        .header-label-white {
+            color: #000000;
+        }
+    }
+
+    .container-black {
+        @include acrylic-black(2%);
+        display: flex;
+        position: relative;
+
+        .header-label-black {
+            color: #f5f5f5;
+        }
+    }
+
+    .header-back-button-white {
+        color: #000000;
+        background: none;
+        padding: 8px;
+        border-radius: 5px;
+        border: 2px solid #57965C;
+        position: absolute;
+        right: 1%;
+        cursor: pointer;
+        transition: 0.3s;
+        @include animation-zoom-in;
+    }
+
+    .header-back-button-white:hover {
+        color: #f5f5f5;
+        background: #57965C;
+    }
+
+    .header-back-button-black {
+        color: #f5f5f5;
+        background: none;
+        padding: 8px;
+        border-radius: 5px;
+        border: 2px solid #57965C;
+        position: absolute;
+        right: 1%;
+        cursor: pointer;
+        transition: 0.3s;
+        @include animation-zoom-in;
+    }
+
+    .header-back-button-black:hover {
+        color: #f5f5f5;
+        background: #57965C;
+    }
+}
+
+.servers-search-white {
+    @include fontStyle;
+    display: flex;
+    padding: 0 12% 1% 12%;
+    color: #000000;
+
+    .container-label-white {
+        @include acrylic-white(2%);
+        display: inline-block;
+        margin-right: 2%;
+        width: 12%;
+    }
+
+    .container-input-white {
+        @include acrylic-white(2%);
+        width: 88%;
+    }
+}
+
+.servers-search-black {
+    @include fontStyle;
+    display: flex;
+    padding: 0 12% 1% 12%;
+    color: #f5f5f5;
+
+    .container-label-black {
+        @include acrylic-black(2%);
+        display: inline-block;
+        margin-right: 2%;
+    }
+
+    .container-input-black {
+        @include acrylic-black(2%);
+        width: 100%;
+    }
+}
+
+.input {
+    @include input;
+    @include fontStyle;
+    width: 100%;
+    color: #f5f5f5;
+}
+
+.white-color-text {
+    color: #000000;
+}
+
+.black-color-text {
+    color: #f5f5f5;
+}
+
+.white-color-border {
+    border: 1px solid #000000;
+}
+
+.black-color-border {
+    border: 1px solid #f5f5f5;
+}
+
+.search {
+    width: 38px;
+    height: 38px;
+}
+
+.servers {
+    @include fontStyle;
+    padding: 0 12%;
+
+    .container-server-list {
+        @include acrylic-white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.nothing-block-search {
+    @include fontStyle(1vh);
+    @include acrylic-white;
+    text-align: center;
+}
+
+.game-card {
+    @include fontStyle(.6vw);
+    @include acrylic-black;
+    display: inline-flex;
+    cursor: pointer;
+    color: #f5f5f5;
+    margin: 2.5%;
+    padding: 2.5% 2.5%;
+    width: 90%;
+    @include animation-zoom-in;
+
+    .game-card-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        div {
+            width: auto;
+            height: 100%;
+            border-radius: 5px;
+            //filter: brightness(70%);
+
+            img {
+                width: 50px;
+                height: 50px;
+                display: block;
+                margin: 4% auto;
+            }
+        }
+
+        h1 {
+            width: 100%;
+        }
+    }
+
+    img {
+        border-radius: 5px;
+        width: 100%; /* Фиксированная ширина для изображений */
+        height: 100px; /* Фиксированная высота для изображений */
+    }
+
+    h1 {
+        margin: 3% 1% 1% 1%;
+    }
+}
+
+.game-image-bar {
+    @include fontStyle;
+    padding: 0 12% 1% 12%;
+
+    .container {
+        @include acrylic-black;
+
+        img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 1% auto;
+        }
+    }
+}
+
+.game-server-list {
+    @include fontStyle;
+    padding: 0 12% 1% 12%;
+}
+
+.server-table {
+    @include fontStyle;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    .container {
+        @include acrylic-black;
+        @include server-table-block;
+    }
+
+    .container-false-info-server {
+        @include acrylic-black;
+        @include server-table-block;
+        @include animation-zoom-in(0.94);
+    }
+
+    .container-true-info-server {
+        @include acrylic-black;
+        @include server-table-block;
+        @include animation-zoom-in-table-true(1.04);
+        cursor: pointer;
+    }
+}
+
+.rotate-phone-screen {
+    @include fontStyle;
+    display: none;
+    color: #f5f5f5;
+    padding: 0 1% 0 1%;
+
+    .container {
+        @include acrylic-black;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+.main-info-page-404 {
+    @include fontStyle;
+    padding: 1% 12%;
+
+    .container-white {
+        @include acrylic-white;
+        position: relative;
+        padding-bottom: 4%;
+
+        h1 {
+            font-size: 8vw;
+            text-align: center;
+        }
+
+        p {
+            font-size: 2vw;
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    @include fontStyle;
+    margin-top: auto;
+    padding: 1% 12% 1% 12%;
+
+
+    .container-white {
+        @include acrylic-white;
+
+        img {
+            padding-top: 1%;
+            width: 20%;
+            cursor: pointer;
+        }
+    }
+
+    .container-black {
+        @include acrylic-black;
+
+        img {
+            padding-top: 1%;
+            width: 20%;
+            cursor: pointer;
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.highlight {
+    background: yellow;
+}
+
+@include header;
+@include game_image_bar;
+@include servers_search;
+@include home_table_media;
+@include game-server-list;
+@include footer;
+@include page-404;

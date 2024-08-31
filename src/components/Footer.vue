@@ -22,7 +22,7 @@
     <div class="footer">
         <div :class="`container-${color_}`">
             <a href="https://discord.gg/MuSTgpevaA" target="_blank">
-                <img :src="`../../public/images/discord-logo-${reloadColor(color_)}.png`" alt="discord">
+                <img :src="`images/discord-logo-${reloadColor(color_)}.png`" alt="discord">
             </a>
         </div>
     </div>

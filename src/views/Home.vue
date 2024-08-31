@@ -5,34 +5,9 @@
     import GameCard from "@/components/GameCard.vue";
     import axios from 'axios';
 
-    import {
-        beammp_v,
-        call_of_duty_modern_warfare_2_v,
-        counter_strike_2_v,
-        counter_strike_global_offensive_v,
-        garrys_mod_v,
-        gta_iv_connected_v,
-        half_life_1_v,
-        minecraft_v,
-        samp_v,
-        squad_v,
-        team_fortress_2_v
-    } from "@/components/Variables.vue";
-
     export default {
         data() {
             return {
-                counter_strike_2_v,
-                counter_strike_global_offensive_v,
-                minecraft_v,
-                half_life_1_v,
-                squad_v,
-                team_fortress_2_v,
-                call_of_duty_modern_warfare_2_v,
-                gta_iv_connected_v,
-                garrys_mod_v,
-                beammp_v,
-                samp_v,
                 searchQuery: "",
                 blocks: [], // Сюда будут загружены данные из /api/blocks
             }
